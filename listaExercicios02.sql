@@ -80,3 +80,12 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE sp_AutorMaisAntigo()
+BEGIN
+    SELECT Nome, Sobrenome
+    FROM Autor
+    WHERE Data_Nascimento = (SELECT MIN(Data_Nascimento) FROM Autor);
+END //
+DELIMITER ;
