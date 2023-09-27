@@ -89,3 +89,11 @@ BEGIN
     WHERE Data_Nascimento = (SELECT MIN(Data_Nascimento) FROM Autor);
 END //
 DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE sp_ListarAutores()
+BEGIN
+
+    SELECT * FROM Autor;
+END //
+DELIMITER ;
